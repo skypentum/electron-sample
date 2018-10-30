@@ -6,8 +6,31 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <title>Hello World!</title>
     <style>
-      #draggable { 
-        width: 150px; height: 150px; padding: 0.5em; 
+      #drag-form,
+      #drag-text,
+      #drag-textarea,
+      #drag-button,
+      #drag-label { 
+        width: 150px; 
+        height: 150px; 
+        padding: 0.5em; 
+        border: 1px solid;
+      }
+
+      .tag-menu,
+      .render-page {
+        display: table-cell;
+      }
+
+      .render-page {
+        width: 500px;
+        height: 500px;
+        border: 1px solid;
+        padding: 0.5em;
+      }
+
+      input[type=text] {
+        display: block;
       }
     </style>
     <script>
@@ -23,9 +46,25 @@
       Chromium <script>document.write(process.versions.chrome)</script>,
       and Electron <script>document.write(process.versions.electron)</script>.
     </div>
-    <div id="draggable" class="ui-widget-content">
-      <p>Drag me around</p>
+    <div class="tag-menu">
+      <div id="drag-form" class="ui-widget-content">
+        <p>Form</p>
+      </div>
+      <div id="drag-label" class="ui-widget-content">
+        <p>Label</p>
+      </div>
+      <div id="drag-text" class="ui-widget-content">
+        <p>Text</p>
+      </div>
+      <div id="drag-textarea" class="ui-widget-content">
+        <p>Textarea</p>
+      </div>
+      <div id="drag-button" class="ui-widget-content">
+        <p>Button</p>
+      </div>
     </div>
-    
+    <div class="render-page">
+      
+    </div>
   </body>
 </html>
