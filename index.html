@@ -2,19 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <title>Hello World!</title>
-    <style>
-      #drag-form,
+    <style>      
       #drag-text,
+      #drag-password,
+      #drag-email,
       #drag-textarea,
       #drag-button,
       #drag-label { 
-        width: 150px; 
-        height: 150px; 
+        text-align: center;
         padding: 0.5em; 
-        border: 1px solid;
+        border: 1px solid #dddddd;
       }
 
       .tag-menu,
@@ -24,42 +25,73 @@
 
       .render-page {
         width: 500px;
-        height: 500px;
-        border: 1px solid;
+        border: 1px solid #dddddd;
         padding: 0.5em;
       }
+      
+      .hello {
+        margin-bottom: 10px;
+      }
 
-      input[type=text] {
+      [name=test-label] {
+        margin: 5px;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      .submit-btn {
         display: block;
       }
     </style>
     <script>
         // You can also require other files to run in this process
+        var Dialogs = require('dialogs')
         require('./renderer.js')
+
+        function formSubmit() {
+            let id = 'ID : ' + $('[name=test-text]').val() + '<br>'
+            let password = 'Password : ' + $('[name=test-password]').val()+ '<br>'
+            let email = 'E-mail : ' + $('[name=test-email]').val()+ '<br>'
+            let content = 'Content : '+ $('[name=test-textarea]').val()+ '<br>'
+            let result = 'Result : <br>' + id + password + email + content
+            let render = '<div class="result-area">'+result+'</div>'
+            $('.render-page').append(render)
+        }
     </script>
   </head>
   <body>
-    <div>
+    <div class="hello">
       <h1>Hello World!</h1>
       <!-- All of the Node.js APIs are available in this renderer process. -->
       We are using Node.js <script>document.write(process.versions.node)</script>,
       Chromium <script>document.write(process.versions.chrome)</script>,
       and Electron <script>document.write(process.versions.electron)</script>.
     </div>
-    <div class="tag-menu">
-      <div id="drag-form" class="ui-widget-content">
-        <p>Form</p>
-      </div>
+    <div class="tag-menu">      
       <div id="drag-label" class="ui-widget-content">
+        <i class="fas fa-font"></i>
         <p>Label</p>
       </div>
       <div id="drag-text" class="ui-widget-content">
+        <i class="fas fa-text-width"></i>
         <p>Text</p>
       </div>
+      <div id="drag-password" class="ui-widget-content">
+        <i class="fas fa-key"></i>
+        <p>Password</p>
+      </div>
+      <div id="drag-email" class="ui-widget-content">
+        <i class="fas fa-envelope"></i>
+        <p>E-mail</p>
+      </div>
       <div id="drag-textarea" class="ui-widget-content">
+        <i class="fas fa-text-height"></i>
         <p>Textarea</p>
       </div>
       <div id="drag-button" class="ui-widget-content">
+        <i class="fas fa-square"></i>
         <p>Button</p>
       </div>
     </div>

@@ -1,5 +1,20 @@
 # Notice
-다음의 소스는 Electron 공식 사이트에서 제공하는 quick start 소스이며, 이를 바탕으로 sample code를 작성하고자 한다. 아래 내용은 electron quick start clone 및 실행 방법에 대한 설명이다. 
+다음의 소스는 Electron 공식 사이트에서 제공하는 quick start 소스이며, 이를 바탕으로 sample code를 작성하고자 한다. 
+
+#Source 실행
+```bash
+$ npm start
+```
+#Source build
+```
+# OS별로 build 된다.
+$ npm run build 
+# (Option) ASAR을 이용하여 Source 공개를 하지 않고 앱으로 build 하는 방법 - linux / Mac 모두 되지만 window는 안됨 ㅠ
+$ npm run package
+```
+
+#Reference
+아래 내용은 electron quick start clone 및 실행 방법에 대한 설명이다. 
 
 # electron-quick-start
 

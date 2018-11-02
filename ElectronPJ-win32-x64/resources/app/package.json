@@ -1,0 +1,31 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "asar pack ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app.asar",
+    "build": "electron-packager . ElectronPJ"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^3.0.4"
+  },
+  "dependencies": {
+    "asar": "^0.14.5",
+    "dialogs": "^1.1.20",
+    "electron-builder": "^20.31.2",
+    "electron-packager": "^12.2.0",
+    "jquery": "^3.3.1"
+  }
+}
